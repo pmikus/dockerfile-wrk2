@@ -3,7 +3,7 @@ FROM alpine:latest
 MAINTAINER Peter Mikus <pmikus@gmail.com>
 
 # Install pre-requisities
-RUN apk add --update alpine-sdk openssl-dev cmake sleep
+RUN apk add --update alpine-sdk openssl-dev cmake
 RUN apk add --no-cache git
 
 # Install HdrHistogram
