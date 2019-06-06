@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-MAINTAINER Peter Mikus <pmikus@gmail.com>
+MAINTAINER Peter Mikus <peter.mikus@protonmail.ch>
 
 # Install pre-requisities
 RUN apk add --update alpine-sdk openssl-dev cmake \
