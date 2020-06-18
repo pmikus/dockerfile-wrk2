@@ -1,22 +1,22 @@
 FROM alpine:latest
 
-MAINTAINER Peter Mikus <peter.mikus@protonmail.ch>
+MAINTAINER Peter Mikus <@peter.mikus>
 
-# Install pre-requisities
+# Install pre-requisities.
 RUN apk add --update alpine-sdk openssl-dev cmake \
-    && apk add --no-cache git
+ && apk add --no-cache git
 
-# Install HdrHistogram
+# Install HdrHistogram.
 RUN git clone https://github.com/HdrHistogram/HdrHistogram_c \
-    && cd HdrHistogram_c \
-    && cmake CMakeLists.txt \
-    && make install
+ && cd HdrHistogram_c \
+ && cmake CMakeLists.txt \
+ && make install
 
-# Install wrk
+# Install wrk.
 RUN git clone https://github.com/ahothan/wrk2 \
-    && cd wrk2 \
-    && make \
-    && mv wrk /bin/
+ && cd wrk2 \
+ && make \
+ && mv wrk /bin/
 
-# Define default command
+# Define default command.
 ENTRYPOINT ["/bin/wrk"]
